@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>Sign-Up</title>
+</head>
+<body>
+<div class="signup-box">
+    <h1>Sign Up</h1>
+    <th:block th:if="${session.msg}">
+        <p>[[${session.msg}]]</p>
+
+    </th:block>
+    <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+    </th:block>
+    <form th:action="createUser" th:method="post">
+        <label>First Name</label>
+        <input type="text" name="firstName" placeholder="" />
+
+        <label>Last Name</label>
+        <input type="text" name="lastName" placeholder="" />
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="" />
+
+        <label>Phone Number</label>
+        <input type="tel"  name="PhoneNumber"placeholder="" />
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="" />
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirmPassword" placeholder="" />
+
+        <button >SignUp</button>
+        <closeform></closeform>
+    </form>
+    <p>
+        By clicking the Sign Up button,you agree to our <br />
+        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+    </p>
+</div>
+
+<p class="para-2">
+    Already have an account? <a href="login.html">Login here</a>
+</p>
+</body>
+</html>
